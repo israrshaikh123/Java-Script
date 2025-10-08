@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Smart Life Assistant</title>
+</head>
+
+<body>
+    <h1>Smart Life Assistant</h1>
+    <p>This project gives suggestions and checks different conditions using JavaScript.</p>
+
+    <script>
+        //fitness
+        let age = Number(prompt("Enter your age:"));
+        let weight = Number(prompt("Enter your weight (in kg):"));
+        let fitnessMsg = "";
+
+        if ((age >= 18 && age <= 30 && weight >= 55 && weight <= 75) ||
+            (age > 30 && age <= 50 && weight >= 60 && weight <= 80)) {
+            fitnessMsg = "You are fit for your age.";
+        } else if (weight < 55) {
+            fitnessMsg = "You are underweight for your age. Consider a healthy diet.";
+        } else {
+            fitnessMsg = "You are overweight for your age. Try some regular exercise.";
+        }
+
+        alert(fitnessMsg);
+        console.log("Fitness Suggestion:", fitnessMsg);
+
+        //budget
+        let income = Number(prompt("Enter your monthly income (in ₹):"));
+        let budgetMsg = "";
+
+        if (income < 10000) {
+            budgetMsg = "Spend cautiously and save more.";
+        } else if (income >= 10000 && income <= 30000) {
+            budgetMsg = "Balanced budget.";
+        } else {
+            budgetMsg = "Your income is good. You can consider investing.";
+        }
+
+        alert(budgetMsg);
+        console.log("Monthly Budget:", budgetMsg);
+
+        //mobile data
+        let dataUsed = Number(prompt("Enter total mobile data used this month (in GB):"));
+        let dataMsg = "";
+
+        if (dataUsed < 5) {
+            dataMsg = "Low data usage.";
+        } else if (dataUsed >= 5 && dataUsed <= 15) {
+            dataMsg = "Normal data usage.";
+        } else {
+            dataMsg = "Heavy data usage. Consider a bigger plan.";
+        }
+
+        alert(dataMsg);
+        console.log("Data Usage:", dataMsg);
+
+        //password
+        const oldPassword = "israr123";
+        let enteredOld = prompt("Enter your old password:");
+        let newPass = "";
+        let confirmPass = "";
+        let passMsg = "";
+
+        if (enteredOld === oldPassword) {
+            newPass = prompt("Enter your new password:");
+            confirmPass = prompt("Confirm your new password:");
+
+            if (newPass === confirmPass && newPass.trim() !== "") {
+                passMsg = "Password changed successfully.";
+            } else {
+                passMsg = "Passwords do not match.";
+            }
+        } else {
+            passMsg = "Old password is incorrect.";
+        }
+
+        alert(passMsg);
+        console.log("Password Change:", passMsg);
+    </script>
+</body>
+
+</html>
