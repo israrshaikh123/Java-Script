@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            font-size: 16px;
+            color: #222;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1d4ed8;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #0d9488;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    </style>
+    <title>Basic Calculator in JavaScript</title>
+</head>
+
+<body>
+
+    <h1> Basic Calculator in JavaScript</h1>
+
+    <div id="arithmetic"></div>
+    <div id="swap"></div>
+    <div id="grade"></div>
+    <div id="bill"></div>
+    <div id="interest"></div>
+    <div id="salary"></div>
+
+</body>
+<script>
+    //basic calc
+    let a = 20, b = 10;
+    let arithmeticOutput = `
+      <h2>1️Basic Arithmetic Calculator</h2>
+      <p>Given Numbers: a = ${a}, b = ${b}</p>
+      <div class="result">
+        Addition: ${a + b}<br>
+        Subtraction: ${a - b}<br>
+        Multiplication: ${a * b}<br>
+        Division: ${a / b}
+      </div>
+    `;
+    document.getElementById("arithmetic").innerHTML = arithmeticOutput;
+    console.log("Arithmetic Calculations:", { Addition: a + b, Subtraction: a - b, Multiplication: a * b, Division: a / b });
+
+    //swapping
+    let x = 5, y = 10, temp;
+    temp = x;
+    x = y;
+    y = temp;
+    let swapOutput = `
+      <h2>2️ Swapping Two Numbers</h2>
+      <p>After Swapping: x = ${x}, y = ${y}</p>
+    `;
+    document.getElementById("swap").innerHTML = swapOutput;
+    console.log("Swapped Values:", { x, y });
+
+    //grade
+    let marks = 85;
+    let grade = "A";
+    let gradeOutput = `
+      <h2>3️ Grade Calculation (Direct Formula)</h2>
+      <p>Marks: ${marks}</p>
+      <div class="result">Grade: ${grade}</div>
+    `;
+    document.getElementById("grade").innerHTML = gradeOutput;
+    alert("Your Grade: " + grade);
+
+    //bill
+    let price = 500, quantity = 3;
+    let total = price * quantity;
+    let discount = total * 0.7;
+    let netAmount = total - discount;
+    let billOutput = `
+      <h2>4️ Bill Calculation</h2>
+      <p>Price: ₹${price}, Quantity: ${quantity}</p>
+      <div class="result">
+        Total: ₹${total}<br>
+        Discount (10%): ₹${discount}<br>
+        Net Amount: ₹${netAmount}
+      </div>
+    `;
+    document.getElementById("bill").innerHTML = billOutput;
+    console.log("Bill Details:", { Total: total, Discount: discount, NetAmount: netAmount });
+
+    //interest
+    let p = 10000, r = 5, t = 2;
+    let si = (p * r * t) / 100;
+    let interestOutput = `
+      <h2>5️ Simple Interest Calculation</h2>
+      <p>Principal: ₹${p}, Rate: ${r}%, Time: ${t} years</p>
+      <div class="result">Simple Interest: ₹${si}</div>
+    `;
+    document.getElementById("interest").innerHTML = interestOutput;
+    alert("Simple Interest = ₹" + si);
+
+    //salary
+    let basic = 15000;
+    let hra = basic * 0.20;
+    let da = basic * 0.10;
+    let gross = basic + hra + da;
+    let salaryOutput = `
+      <h2>6️ Employee Salary Calculation</h2>
+      <p>Basic Salary: ₹${basic}</p>
+      <div class="result">
+        HRA (20%): ₹${hra}<br>
+        DA (10%): ₹${da}<br>
+        Gross Salary: ₹${gross}
+      </div>
+    `;
+    document.getElementById("salary").innerHTML = salaryOutput;
+    console.log("Salary Details:", { Basic: basic, HRA: hra, DA: da, Gross: gross });
+</script>
+
+</html>
