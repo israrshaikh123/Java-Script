@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Countdown & Quotes App — New Year 2026</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>Countdown & Quotes App</h1>
+      <p class="subtitle">Countdown to New Year 2026 • Motivational quotes • Modal popup</p>
+    </header>
+
+    <section class="card countdown-card">
+      <h2>Countdown to New Year </h2>
+      <div class="countdown-grid" id="countdown">
+        <div class="time-col"><span id="days">00</span><small>Days</small></div>
+        <div class="time-col"><span id="hours">00</span><small>Hours</small></div>
+        <div class="time-col"><span id="minutes">00</span><small>Minutes</small></div>
+        <div class="time-col"><span id="seconds">00</span><small>Seconds</small></div>
+      </div>
+
+      <div class="controls">
+        <button id="toggleCountdown" class="btn">Pause Countdown</button>
+      </div>
+
+      <p id="countdownMessage" class="message"></p>
+    </section>
+
+    <section class="card quotes-card">
+      <h2>Motivational Quotes</h2>
+      <div id="quoteBox" class="quote-box">Loading quote…</div>
+
+      <div class="quote-controls">
+        <button id="prevQuote" class="btn small">Previous</button>
+        <button id="nextQuote" class="btn small">Next</button>
+      </div>
+    </section>
+</main>
+
+
+  <div id="welcomeModal" class="modal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <h3 id="modalTitle">Welcome 🎉</h3>
+      <p>Welcome to the Countdown & Quotes App — Stay motivated as you wait for New Year 2026!</p>
+      <div class="modal-actions">
+        <button id="closeModal" class="btn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
