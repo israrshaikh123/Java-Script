@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="./assets/style.css">
+
+    <!-- bootstrap css link  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- font awasome link for icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        .qty-btn {
+            width: 35px;
+            height: 35px;
+            border: none;
+            background: #000;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .delete-btn {
+            width: 35px;
+            height: 35px;
+            border: none;
+            background: #000;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .product-img {
+            width: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="main-navigation py-3">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-4">
+                        <nav class="navbar navbar-expand-lg">
+                            <div class="container-fluid">
+                                <div class="collapse navbar-collapse" id="navbarNav">
+                                    <ul class="navbar-nav text-uppercase gap-2">
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="./index.html">Home
+                                                <span><i class="fa-solid fa-angle-down"></i></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="#">Shop
+                                                <span><i class="fa-solid fa-angle-down"></i></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="./view.html">products
+                                                <span><i class="fa-solid fa-angle-down"></i></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="#">pages
+                                                <span><i class="fa-solid fa-angle-down"></i></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="#">Blog
+                                                <span><i class="fa-solid fa-angle-down"></i></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="col-3 d-flex justify-content-end align-items-center">
+                        <div class="logo">
+                            <a href="./index.html">
+                                <img src="./assets/images/logo-dark.png" alt="logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-5 d-flex justify-content-end fs-5">
+                        <nav class="navbar navbar-expand-lg">
+                            <div class="container-fluid">
+                                <div class="collapse navbar-collapse" id="navbarNav">
+                                    <ul class="navbar-nav text-uppercase gap-4">
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark fs-6 p-0" href="./add-product.html">
+                                                <span>
+                                                    <i class="fa-solid fa-plus"></i>
+                                                    <span>Add Product</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark fs-6 p-0" href="./view.html">
+                                                <span>
+                                                    <i class="fa-solid fa-plus"></i>
+                                                    <span>View Products</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="#">
+                                                <span><i class="fa-solid  fa-magnifying-glass"></i></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="#">
+                                                <span><i class="fa-regular fa-user"></i></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="#">
+                                                <span><i class="fa-regular fa-star"></i></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="./cart.html">
+                                                <span><i class="fa-solid fa-basket-shopping"></i></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="breadcrumb-wrapper text-centrer">
+            <nav aria-label="breadcrumb text-center">
+                <ol class="breadcrumb pt-2">
+                    <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"> <a href="./cart.html">Cart</a>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="shopping-cart">
+            <div class="container">
+                <div class="title">
+                    <h2 class="text-center mt-5">Shopping Cart</h2>
+                </div>
+                <div class="row">
+                    <table class="table align-middle text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">Product image</th>
+                                <th scope="col">product Name</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col"> Product price</th>
+                                <th scope="col"> Product Total </th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-body"></tbody>
+
+                        <h4 class="mt-4">Grand Total: ₹ <span id="grand-total">0</span></h4>
+
+                        <a href="./index.html" class="btn btn-dark mt-3">Continue Shopping</a>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- js attach  -->
+    <script src="./assets/script.js"></script>
+    <script>
+        loadCart();
+    </script>
+</body>
+
+</html>

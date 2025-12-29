@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product</title>
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="./assets/style.css">
+
+    <!-- bootstrap css link  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- font awasome link for icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Edit Product</h2>
+        <form id="editForm">
+            <div class="mb-3">
+                <label for="pid" class="form-label">Product ID</label>
+                <input type="text" id="pid" class="form-control" readonly>
+            </div>
+            <div class="mb-3">
+                <label for="pname" class="form-label">Product Name</label>
+                <input type="text" id="pname" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="color" class="form-label">Color</label>
+                <input type="text" id="color" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Price ($)</label>
+                <input type="text" id="price" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="quantity" class="form-label">Quantity</label>
+                <input type="number" id="quantity" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="img" class="form-label">Image URL</label>
+                <input type="text" id="img" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="desc" class="form-label">Description</label>
+                <textarea id="desc" class="form-control" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">Update Product</button>
+            <a href="./cart.html" class="btn btn-secondary ms-2">Cancel</a>
+        </form>
+    </div>
+
+    <script src="./assets/script.js"></script>
+    <script>
+        // Get edit index from localStorage
+        let editIndex = localStorage.getItem("editIndex");
+        let products = JSON.parse(localStorage.getItem("products")) || [];
+
+        if (editIndex !== null) {
+            editIndex = Number(editIndex);
+            const product = products[editIndex];
+
+            // Pre-fill form inputs
+            document.getElementById("pid").value = product.pid;
+            document.getElementById("pname").value = product.pname;
+            document.getElementById("color").value = product.color;
+            document.getElementById("price").value = product.price;
+            document.getElementById("quantity").value = product.quantity;
+            document.getElementById("img").value = product.img;
+            document.getElementById("desc").value = product.desc;
+        }
+
+        // Handle form submission
+        document.getElementById("editForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const updatedProduct = {
+                pid: document.getElementById("pid").value.trim(),
+                pname: document.getElementById("pname").value.trim(),
+                color: document.getElementById("color").value.trim(),
+                price: document.getElementById("price").value.trim(),
+                quantity: document.getElementById("quantity").value.trim(),
+                img: document.getElementById("img").value.trim(),
+                desc: document.getElementById("desc").value.trim()
+            };
+
+            // Update product in array
+            products[editIndex] = updatedProduct;
+            localStorage.setItem("products", JSON.stringify(products));
+
+            alert("Product updated successfully!");
+            // Redirect to cart page
+            window.location.href = "view.html";
+        });
+    </script>
+</body>
+
+</html>

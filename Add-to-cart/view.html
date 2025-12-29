@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Producut</title>
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="./assets/style.css">
+
+    <!-- bootstrap css link  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- font awasome link for icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="topbar">
+            <div class="container">
+                <div class="row">
+                    <p class="fw-light text-center mx-0 my-0 px-0">Free Shipping On All U.S Orders $50+</p>
+                </div>
+            </div>
+        </div>
+        <div class="main-navigation py-3">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-4">
+                        <nav class="navbar navbar-expand-lg">
+                            <div class="container-fluid">
+                                <div class="collapse navbar-collapse" id="navbarNav">
+                                    <ul class="navbar-nav text-uppercase gap-2">
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="./index.html">Home
+                                                <span><i class="fa-solid fa-angle-down"></i></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="#">Shop
+                                                <span><i class="fa-solid fa-angle-down"></i></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="./view.html">products
+                                                <span><i class="fa-solid fa-angle-down"></i></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="#">pages
+                                                <span><i class="fa-solid fa-angle-down"></i></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="#">Blog
+                                                <span><i class="fa-solid fa-angle-down"></i></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="col-3 d-flex justify-content-end align-items-center">
+                        <div class="logo">
+                            <a href="./index.html">
+                                <img src="./assets/images/logo-dark.png" alt="logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-5 d-flex justify-content-end fs-5">
+                        <nav class="navbar navbar-expand-lg">
+                            <div class="container-fluid">
+                                <div class="collapse navbar-collapse" id="navbarNav">
+                                    <ul class="navbar-nav text-uppercase gap-4">
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark fs-6 p-0" href="./add-product.html">
+                                                <span>
+                                                    <i class="fa-solid fa-plus"></i>
+                                                    <span>Add Product</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark fs-6 p-0" href="./view.html">
+                                                <span>
+                                                    <i class="fa-solid fa-plus"></i>
+                                                    <span>View Products</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="#">
+                                                <span><i class="fa-solid  fa-magnifying-glass"></i></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="#">
+                                                <span><i class="fa-regular fa-user"></i></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="#">
+                                                <span><i class="fa-regular fa-star"></i></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="./cart.html">
+                                                <span><i class="fa-solid fa-basket-shopping"></i></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="breadcrumb-wrapper text-centrer">
+            <nav aria-label="breadcrumb text-center">
+                <ol class="breadcrumb pt-2">
+                    <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"> <a href="./view.html">View</a>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="container mt-5">
+            <h2 class="text-center mb-4">View Products</h2>
+
+            <table class="table table-hover table-bordered align-middle text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Product Name</th>
+                        <th>Product Price</th>
+                        <th>Product Quantity</th>
+                        <th>Product Image</th>
+                        <th>Product Color</th>
+                        <th>Product Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="view-body">
+                </tbody>
+
+            </table>
+        </div>
+    </main>
+
+    <script src="./assets/script.js"></script>
+    <script>
+        loadViewProducts();
+    </script>
+</body>
+
+</html>

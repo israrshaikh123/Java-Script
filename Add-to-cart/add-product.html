@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="./assets/style.css">
+
+    <!-- bootstrap css link  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- font awasome link for icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="main-navigation py-3">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-4">
+                        <nav class="navbar navbar-expand-lg">
+                            <div class="container-fluid">
+                                <div class="collapse navbar-collapse" id="navbarNav">
+                                    <ul class="navbar-nav text-uppercase gap-2">
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="./index.html">Home
+                                                <span><i class="fa-solid fa-angle-down"></i></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="#">Shop
+                                                <span><i class="fa-solid fa-angle-down"></i></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="./view.html">productss
+                                                <span><i class="fa-solid fa-angle-down"></i></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="#">pages
+                                                <span><i class="fa-solid fa-angle-down"></i></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="#">Blog
+                                                <span><i class="fa-solid fa-angle-down"></i></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <div class="col-3 d-flex justify-content-end align-items-center">
+                        <div class="logo">
+                            <a href="./index.html">
+                                <img src="assets/images/logo-dark.png" alt="logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-5 d-flex justify-content-end fs-5">
+                        <nav class="navbar navbar-expand-lg">
+                            <div class="container-fluid">
+                                <div class="collapse navbar-collapse" id="navbarNav">
+                                    <ul class="navbar-nav text-uppercase gap-4">
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark fs-6 p-0" href="./add-product.html">
+                                                <span>
+                                                    <i class="fa-solid fa-plus"></i>
+                                                    <span>Add Product</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark fs-6 p-0" href="./view.html">
+                                                <span>
+                                                    <i class="fa-solid fa-plus"></i>
+                                                    <span>View Product</span>
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="#">
+                                                <span><i class="fa-solid  fa-magnifying-glass"></i></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="#">
+                                                <span><i class="fa-regular fa-user"></i></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="#">
+                                                <span><i class="fa-regular fa-star"></i></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link text-dark" href="./cart.html">
+                                                <span><i class="fa-solid fa-basket-shopping"></i></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="breadcrumb-wrapper text-centrer">
+            <nav aria-label="breadcrumb text-center">
+                <ol class="breadcrumb pt-2">
+                    <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"> <a href="./add-product.html">Add Product</a>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+
+        <section>
+            <form onsubmit="addProduct(); return false;">
+                <div class="container">
+                    <div class="title">
+                        <h2 class="text-center mt-5">Add Product</h2>
+                    </div>
+                    <div class="row">
+                        <div class="mb-2">
+                            <label for="productId" class="form-label">Product Id : </label>
+                            <input type="number" class="form-control" id="pid">
+                        </div>
+                        <div class="mb-2">
+                            <label for="productName" class="form-label">Product Name : </label>
+                            <input type="text" class="form-control" id="pname">
+                        </div>
+                        <div class="mb-2">
+                            <label for="color" class="form-label">Product color : </label>
+                            <input type="text" class="form-control" id="color">
+                        </div>
+                        <div class="mb-2">
+                            <label for="productPrice" class="form-label">Product Price : </label>
+                            <input type="number" class="form-control w-25" id="price">
+                        </div>
+                        <div class="mb-2">
+                            <label for="productQty" class="form-label">Product Quantity : </label>
+                            <input type="number" class="form-control" id="quantity">
+                        </div>
+                        <div class="mb-2">
+                            <label for="productImg" class="form-label">Product Image : </label>
+                            <input type="text" class="form-control" id="img">
+                        </div>
+                        <div class="mb-2">
+                            <label for="productDesc" class="form-label">Product description : </label>
+                            <textarea id="desc" name="message" rows="4" cols="80"
+                                placeholder="Write your message here..." style="resize: none;"></textarea>
+
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+
+
+    <!-- bootstrap js link  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="./assets/script.js"></script>
+
+</body>
+
+</html>
