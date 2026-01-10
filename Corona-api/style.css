@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f4f6f8;
+  color: #333;
+}
+h2 {
+  color: #1e293b;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 30px 15px;
+  background-color: #1e293b;
+  color: #fff;
+}
+
+header h1 {
+  font-size: 32px;
+}
+
+header p {
+  margin-top: 8px;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* Dashboard */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+.card p {
+  font-size: 30px;
+  margin-top: 8px;
+}
+
+/* Card Colors */
+/* Gradient card backgrounds */
+.total {
+  background: linear-gradient(135deg, #3b82f6, #1e40af);
+  color: #fff;
+}
+
+.active {
+  background: linear-gradient(135deg, #f59e0b, #b45309);
+  color: #fff;
+}
+
+.recovered {
+  background: linear-gradient(135deg, #22c55e, #166534);
+  color: #fff;
+}
+
+.deaths {
+  background: linear-gradient(135deg, #ef4444, #7f1d1d);
+  color: #fff;
+}
+
+.hospital {
+  background: linear-gradient(135deg, #0ea5e9, #075985);
+  color: #fff;
+}
+
+.beds {
+  background: linear-gradient(135deg, #8b5cf6, #4c1d95);
+  color: #fff;
+}
+
+/* Hospitals Section */
+.hospitals {
+  max-width: 1100px;
+  margin: 20px auto 40px;
+  padding: 0 30px;
+}
+
+.hospitals h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+
+.hospital-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.hospital {
+  border-left: 6px solid #0ea5e9;
+}
+
+.beds {
+  border-left: 6px solid #7c3aed;
+}
