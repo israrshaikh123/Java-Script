@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verses</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="index.html" class="nav-brand">
+        <img src="images/bhagavad-gita.webp" alt="logo">
+        <h2>Bhagavad Gita</h2>
+      </a>
+    </div>
+  </nav>
+
+  <section class="container">
+    <div id="verses"></div>
+  </section>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const chapter = params.get('ch');
+    const count = params.get('count');
+
+    const versesDiv = document.getElementById('verses');
+    versesDiv.innerHTML = `<h2>Chapter ${chapter} – Verses</h2>`;
+
+    for (let i = 1; i <= count; i++) {
+      fetch(`https://vedicscriptures.github.io/slok/${chapter}/${i}`)
+        .then(res => res.json())
+        .then(v => {
+          const div = document.createElement('div');
+          div.className = 'card';
+          div.innerHTML = `
+          <h4>Verse ${v.verse}</h4>
+          <p>${v.slok.replace(/\n/g, '<br>')}</p>
+          <p>${v.siva?.et || ''}</p>
+        `;
+          versesDiv.appendChild(div);
+        });
+    }
+  </script>
+</body>
+
+</html>
